@@ -91,6 +91,7 @@ void __weak arch_cpu_idle(void)
 static void cpu_idle_loop(void)
 {
 	while (1) {
+		quiet_vmstat();
 		tick_nohz_idle_enter();
 
 		while (!need_resched()) {
